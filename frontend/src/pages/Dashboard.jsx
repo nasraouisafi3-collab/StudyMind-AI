@@ -1,19 +1,19 @@
-import Sidebar from "../components/dashboard/Sidebar"
-import StatsCard from "../components/dashboard/StatsCard"
-import UploadCard from "../components/dashboard/UploadCard"
-import AITutorChat from "../components/dashboard/AITutorChat"
+import Sidebar from "@/components/dashboard/Sidebar"
+import LanguageSelector from "@/components/LanguageSelector"
 
 
 function Dashboard(){
 
-return(
+return (
 
 <div
+
 className="
 flex
 min-h-screen
 bg-[#F6F2EB]
 "
+
 >
 
 
@@ -21,19 +21,37 @@ bg-[#F6F2EB]
 
 
 <main
+
 className="
 flex-1
-p-10
+p-8
 "
+
 >
 
 
-<h1
+<div
+
 className="
-text-5xl
-font-semibold
+flex
+justify-between
+items-center
+mb-10
+"
+
+>
+
+
+<div>
+
+<h1
+
+className="
+text-4xl
+font-bold
 text-[#1E293B]
 "
+
 >
 
 Welcome back 👋
@@ -41,52 +59,92 @@ Welcome back 👋
 </h1>
 
 
-
 <p
+
 className="
-mt-3
 text-gray-500
-text-xl
+mt-2
 "
+
 >
 
-Ready to learn something new?
+Your AI learning assistant is ready.
 
 </p>
 
 
+</div>
+
+
+
+<LanguageSelector />
+
+
+</div>
+
+
+
+<div
+
+className="
+grid
+md:grid-cols-3
+gap-6
+"
+
+>
+
+
+<div
+className="
+bg-white
+rounded-3xl
+p-6
+shadow
+"
+>
+
+📚
+
+<h2 className="text-xl font-semibold mt-3">
+
+Upload Courses
+
+</h2>
+
+<p className="text-gray-500 mt-2">
+
+Add your lessons and let AI analyze them.
+
+</p>
+
+
+</div>
 
 
 
 <div
 className="
-grid
-md:grid-cols-3
-gap-6
-mt-10
+bg-white
+rounded-3xl
+p-6
+shadow
 "
 >
 
+🤖
 
-<StatsCard
-icon="📚"
-title="Courses"
-value="0"
-/>
+<h2 className="text-xl font-semibold mt-3">
 
+AI Tutor
 
-<StatsCard
-icon="📝"
-title="Quizzes"
-value="0"
-/>
+</h2>
 
+<p className="text-gray-500 mt-2">
 
-<StatsCard
-icon="🔥"
-title="Study streak"
-value="0"
-/>
+Chat with your courses.
+
+</p>
 
 
 </div>
@@ -94,13 +152,34 @@ value="0"
 
 
 
+<div
+className="
+bg-white
+rounded-3xl
+p-6
+shadow
+"
+>
 
-<UploadCard />
+📝
+
+<h2 className="text-xl font-semibold mt-3">
+
+Smart Tools
+
+</h2>
+
+<p className="text-gray-500 mt-2">
+
+Generate quizzes and flashcards.
+
+</p>
 
 
+</div>
 
-<AITutorChat />
 
+</div>
 
 
 </main>

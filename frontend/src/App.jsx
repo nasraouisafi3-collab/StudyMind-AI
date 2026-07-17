@@ -1,17 +1,54 @@
+import { Routes, Route } from "react-router-dom"
+
+import Home from "./pages/Home"
 import Dashboard from "./pages/Dashboard"
-import Navbar from "./components/layout/Navbar"
-import Hero from "./components/sections/Hero"
-import TransformSection from "./components/sections/TransformSection"
-import AITutorSection from "./components/sections/AITutorSection"
-import LearningJourney from "./components/LearningJourney"
-import TounsiAI from "./components/TounsiAI"
-import SmartTools from "./components/SmartTools"
+import Login from "./pages/Login"
+import Register from "./pages/Register"
+import ForgotPassword from "./pages/ForgotPassword"
+
 
 
 function App(){
 
-return <Dashboard />
+return (
+
+<Routes>
+
+<Route
+path="/"
+element={<Home />}
+/>
+
+
+<Route
+path="/login"
+element={<Login />}
+/>
+
+
+<Route
+path="/register"
+element={<Register />}
+/>
+
+
+<Route
+path="/forgot-password"
+element={<ForgotPassword />}
+/>
+
+
+<Route
+path="/dashboard"
+element={<Dashboard />}
+/>
+
+
+</Routes>
+
+)
 
 }
+
 
 export default App

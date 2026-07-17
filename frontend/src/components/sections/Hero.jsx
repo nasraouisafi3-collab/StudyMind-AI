@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
 import Glow from "../ui/Glow"
-import Button from "../ui/Button"
+import { Button } from "../ui/button"
 
 
 function Hero() {

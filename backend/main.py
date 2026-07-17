@@ -1,3 +1,4 @@
+from fastapi.middleware.cors import CORSMiddleware
 from backend.services.groq_service import ask_groq
 from backend.services.quiz_service import generate_quiz
 from backend.services.flashcard_service import generate_flashcards
@@ -8,6 +9,16 @@ import shutil
 import os
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:5173"
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 UPLOAD_FOLDER = "uploads"
 

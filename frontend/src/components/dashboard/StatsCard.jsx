@@ -1,43 +1,130 @@
-function StatsCard({icon,title,value}){
+import { Link } from "react-router-dom"
 
 
-return(
+function Sidebar(){
+
+return (
 
 <div
+
 className="
-bg-white/80
-backdrop-blur-xl
-rounded-3xl
+w-64
+min-h-screen
+bg-white
+shadow-xl
 p-6
-shadow-sm
-border
-border-orange-100
+"
+
+>
+
+
+<h1
+
+className="
+text-2xl
+font-bold
+text-[#D97732]
+mb-10
+"
+
+>
+
+✦ StudyMind AI
+
+</h1>
+
+
+
+<nav
+
+className="
+space-y-4
+"
+
+>
+
+
+<Link
+to="/dashboard"
+className="
+block
+p-3
+rounded-xl
+hover:bg-orange-50
 "
 >
 
-<div className="
-text-3xl
-mb-3
-">
-{icon}
-</div>
+🏠 Home
+
+</Link>
 
 
-<p className="
-text-gray-500
-">
-{title}
-</p>
+
+<Link
+to="/dashboard"
+className="
+block
+p-3
+rounded-xl
+hover:bg-orange-50
+"
+>
+
+📚 Courses
+
+</Link>
 
 
-<h3 className="
-text-3xl
-font-semibold
-text-[#1E293B]
-mt-2
-">
-{value}
-</h3>
+
+<Link
+to="/dashboard"
+className="
+block
+p-3
+rounded-xl
+hover:bg-orange-50
+"
+>
+
+🤖 AI Tutor
+
+</Link>
+
+
+
+<Link
+to="/dashboard"
+className="
+block
+p-3
+rounded-xl
+hover:bg-orange-50
+"
+>
+
+📝 Quiz
+
+</Link>
+
+
+
+<Link
+to="/dashboard"
+className="
+block
+p-3
+rounded-xl
+hover:bg-orange-50
+"
+>
+
+⚙ Settings
+
+</Link>
+
+
+
+</nav>
 
 
 </div>
@@ -47,4 +134,4 @@ mt-2
 }
 
 
-export default StatsCard
+export default Sidebar

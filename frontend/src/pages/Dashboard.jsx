@@ -1,10 +1,10 @@
 import Sidebar from "../components/dashboard/Sidebar"
 import StatsCard from "../components/dashboard/StatsCard"
-
+import UploadCard from "../components/dashboard/UploadCard"
+import AITutorChat from "../components/dashboard/AITutorChat"
 
 
 function Dashboard(){
-
 
 return(
 
@@ -56,6 +56,8 @@ Ready to learn something new?
 
 
 
+
+
 <div
 className="
 grid
@@ -90,8 +92,18 @@ value="0"
 </div>
 
 
-</main>
 
+
+
+<UploadCard />
+
+
+
+<AITutorChat />
+
+
+
+</main>
 
 
 </div>

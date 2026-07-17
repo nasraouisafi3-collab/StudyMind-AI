@@ -1,13 +1,14 @@
 import { motion } from "framer-motion"
-import Logo from "../Logo"
-import TunisianPattern from "../TunisianPattern"
+import Glow from "../ui/Glow"
+import Button from "../ui/Button"
 
 
 function Hero() {
 
   return (
 
-    <section className="
+    <section
+      className="
       min-h-screen
       relative
       overflow-hidden
@@ -15,216 +16,145 @@ function Hero() {
       items-center
       justify-center
       px-6
-      pt-24
-      bg-[#FCFAF7]
-    ">
+      pt-32
+      bg-[#F6F2EB]
+      "
+    >
+
+      <Glow />
 
 
-      {/* Tunisian hidden pattern */}
-      <TunisianPattern position="top-right"/>
+      <motion.div
 
+        initial={{
+          opacity:0,
+          y:40
+        }}
 
-      {/* Orange sunlight */}
-      <div className="
-        absolute
-        top-[-250px]
-        left-1/2
-        -translate-x-1/2
-        w-[900px]
-        h-[900px]
-        rounded-full
-        bg-orange-300/40
-        blur-[160px]
-      "/>
+        animate={{
+          opacity:1,
+          y:0
+        }}
 
+        transition={{
+          duration:1.2,
+          ease:"easeOut"
+        }}
 
-      {/* Blue Mediterranean glow */}
-      <div className="
-        absolute
-        bottom-[-200px]
-        right-[-100px]
-        w-[500px]
-        h-[500px]
-        rounded-full
-        bg-[#168AAD]/20
-        blur-[120px]
-      "/>
-
-
-
-
-      <div className="
-        relative
+        className="
         max-w-6xl
         w-full
-        text-center
-      ">
+        grid
+        lg:grid-cols-2
+        gap-16
+        items-center
+        "
+      >
+
+
+        {/* LEFT SIDE */}
+
+        <div>
+
+
+          {/* Animated Spark */}
+
+          <motion.div
+
+            animate={{
+              scale:[1,1.08,1],
+              rotate:[0,5,0]
+            }}
+
+            transition={{
+              duration:3,
+              repeat:Infinity,
+              ease:"easeInOut"
+            }}
+
+            className="
+            text-5xl
+            text-[#D97732]
+            mb-6
+            drop-shadow-lg
+            "
+          >
+            ✦
+          </motion.div>
 
 
 
-        {/* Spark */}
-
-        <motion.div
-
-          initial={{
-            opacity:0,
-            scale:0.5
-          }}
-
-          animate={{
-            opacity:1,
-            scale:1
-          }}
-
-          transition={{
-            duration:0.8
-          }}
-
-          className="
-            flex
-            justify-center
-            mb-8
-          "
-
-        >
-
-          <Logo showName={false}/>
-
-        </motion.div>
-
-
-
-
-
-        {/* Title */}
-
-        <motion.h1
-
-          initial={{
-            opacity:0,
-            y:40
-          }}
-
-          animate={{
-            opacity:1,
-            y:0
-          }}
-
-          transition={{
-            duration:1
-          }}
-
-
-          className="
+          <h1
+            className="
             text-6xl
-            md:text-8xl
+            md:text-7xl
             font-semibold
+            leading-tight
             tracking-tight
-            leading-[1.05]
-            text-gray-900
-          "
+            text-[#1E293B]
+            "
+          >
 
-        >
+            Learn without
+            <br/>
 
-          Learn without limits
-          
-          <br/>
+            limits.
 
-          with your
-
-          <span className="
-            text-orange-500
-          ">
-            {" "}AI tutor
-          </span>
-
-
-        </motion.h1>
+          </h1>
 
 
 
-
-
-        <motion.p
-
-          initial={{
-            opacity:0
-          }}
-
-          animate={{
-            opacity:1
-          }}
-
-          transition={{
-            delay:0.5
-          }}
-
-          className="
+          <p
+            className="
             mt-8
             text-xl
-            text-gray-500
-            max-w-2xl
-            mx-auto
+            text-gray-600
             leading-relaxed
-          "
+            "
+          >
 
-        >
+            Your AI tutor that transforms
+            courses into knowledge.
 
-          Transform your courses into knowledge.
-          Understand lessons in English,
-          Français and Tounsi 🇹🇳.
+            <br/>
 
-        </motion.p>
+            English · Français · Tounsi 🇹🇳
 
-
-
-
-
-        {/* Buttons */}
-
-        <div className="
-          mt-10
-          flex
-          justify-center
-          gap-4
-          flex-wrap
-        ">
-
-
-          <button className="
-            px-8
-            py-4
-            rounded-full
-            bg-orange-500
-            text-white
-            font-medium
-            shadow-xl
-            shadow-orange-500/20
-            hover:scale-105
-            transition
-          ">
-
-            Start Learning
-
-          </button>
+          </p>
 
 
 
-          <button className="
-            px-8
-            py-4
-            rounded-full
-            border
-            border-gray-200
-            bg-white/70
-            backdrop-blur-xl
-            hover:scale-105
-            transition
-          ">
+          <div
+            className="
+            mt-10
+            flex
+            gap-5
+            flex-wrap
+            "
+          >
 
-            See how it works
+            <Button>
+              Start Learning
+            </Button>
 
-          </button>
+
+            <button
+              className="
+              px-8
+              py-4
+              rounded-full
+              border
+              border-orange-300
+              text-[#D97732]
+              bg-white/60
+              backdrop-blur
+              "
+            >
+              See how it works
+            </button>
+
+
+          </div>
 
 
         </div>
@@ -233,93 +163,244 @@ function Hero() {
 
 
 
-        {/* App preview floating card */}
+        {/* RIGHT SIDE AI CARD */}
+
 
         <motion.div
 
-          initial={{
-            opacity:0,
-            y:80
-          }}
-
           animate={{
-            opacity:1,
-            y:0
+            y:[0,-18,0],
+            rotate:[0,1,-1,0]
           }}
 
           transition={{
-            delay:0.8,
-            duration:1
+            duration:6,
+            repeat:Infinity,
+            ease:"easeInOut"
           }}
 
-
           className="
-            mt-20
-            mx-auto
-            max-w-4xl
-            rounded-[40px]
-            bg-white
-            shadow-2xl
-            border
-            border-gray-100
-            p-6
+          relative
           "
-
         >
 
 
-          <div className="
-            rounded-[30px]
-            bg-[#FCFAF7]
-            p-10
-          ">
+          {/* Orange soft glow */}
+
+          <div
+          className="
+          absolute
+          inset-0
+          bg-[#D97732]/20
+          blur-3xl
+          rounded-full
+          "
+          />
 
 
-            <div className="
-              text-left
-              text-gray-400
-              text-sm
-              mb-5
-            ">
 
-              ✦ StudyMind AI Tutor
+          <div
+            className="
+            relative
+            rounded-[32px]
+            bg-white/80
+            backdrop-blur-xl
+            border
+            border-orange-100
+            shadow-2xl
+            p-6
+            "
+          >
+
+
+            <div
+              className="
+              flex
+              items-center
+              gap-3
+              "
+            >
+
+              <div
+                className="
+                text-2xl
+                text-[#D97732]
+                "
+              >
+                ✦
+              </div>
+
+
+              <div>
+
+                <h3
+                className="
+                font-semibold
+                text-[#1E293B]
+                "
+                >
+                  StudyMind AI
+                </h3>
+
+
+                <p
+                className="
+                text-sm
+                text-gray-500
+                "
+                >
+                  Your personal tutor
+                </p>
+
+
+              </div>
+
 
             </div>
 
 
-            <div className="
-              bg-white
-              rounded-3xl
-              p-6
-              shadow-sm
-              text-left
-            ">
 
-              <p className="
-                text-gray-500
-              ">
 
-                Explain inflation simply
+            <div
+              className="
+              mt-8
+              rounded-2xl
+              bg-[#F6F2EB]
+              p-4
+              "
+            >
 
+              <p
+              className="
+              text-sm
+              text-gray-500
+              "
+              >
+                📄 Economics.pdf
               </p>
 
 
-              <div className="
-                mt-4
-                bg-orange-500
-                text-white
-                rounded-2xl
-                p-4
-              ">
+              <p
+              className="
+              mt-3
+              font-medium
+              "
+              >
+                Explain inflation simply
+              </p>
 
-                Inflation means prices increase
-                over time.
 
-                <br/><br/>
+            </div>
 
-                🇹🇳 Ya3ni el 7aja twalli aghla
+
+
+
+
+            <div
+              className="
+              mt-5
+              space-y-4
+              "
+            >
+
+
+              <div
+              className="
+              bg-orange-50
+              rounded-2xl
+              p-4
+              "
+              >
+
+                <p
+                className="
+                text-sm
+                font-medium
+                text-[#D97732]
+                "
+                >
+                  AI Explanation
+                </p>
+
+
+                <p
+                className="
+                mt-2
+                text-gray-700
+                "
+                >
+                  Inflation means prices increase
+                  over time.
+                </p>
+
+
+              </div>
+
+
+
+
+
+              <div
+              className="
+              bg-[#788B3D]/10
+              rounded-2xl
+              p-4
+              "
+              >
+
+                <p
+                className="
+                text-sm
+                font-medium
+                text-[#788B3D]
+                "
+                >
+                  🇹🇳 Tounsi explanation
+                </p>
+
+
+                <p
+                className="
+                mt-2
+                text-gray-700
+                "
+                >
+
+                Ya3ni el 7aja twalli aghla
                 w el flous techri a9al.
 
+                </p>
+
+
+              </div>
+
+
+            </div>
+
+
+
+
+            <div
+            className="
+            mt-6
+            grid
+            grid-cols-3
+            gap-3
+            "
+            >
+
+              <div className="bg-[#F6F2EB] rounded-xl p-3 text-center text-sm">
+                📄 Summary
+              </div>
+
+
+              <div className="bg-[#F6F2EB] rounded-xl p-3 text-center text-sm">
+                📝 Quiz
+              </div>
+
+
+              <div className="bg-[#F6F2EB] rounded-xl p-3 text-center text-sm">
+                🗂 Cards
               </div>
 
 
@@ -332,14 +413,12 @@ function Hero() {
         </motion.div>
 
 
-
-      </div>
+      </motion.div>
 
 
     </section>
 
   )
-
 }
 
 

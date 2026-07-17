@@ -1,204 +1,359 @@
 import { motion } from "framer-motion"
-import Logo from "./Logo"
 
 
-function LearningJourney() {
+function LearningJourney(){
 
-  const steps = [
+const steps = [
 
-    {
-      icon:"📚",
-      title:"Upload your courses",
-      text:"Add your PDFs, lessons, and study materials."
-    },
+{
+number:"01",
+icon:"📚",
+title:"Upload your courses",
+text:"Add your PDFs, lessons and study materials."
+},
 
-    {
-      icon:"✦",
-      title:"Understand with AI",
-      text:"Ask questions and get explanations in your language."
-    },
+{
+number:"02",
+icon:"✦",
+title:"Understand with AI",
+text:"StudyMind explains difficult lessons in a simple way."
+},
 
-    {
-      icon:"📝",
-      title:"Practice smarter",
-      text:"Generate quizzes, summaries, and flashcards."
-    },
+{
+number:"03",
+icon:"📝",
+title:"Practice smarter",
+text:"Create quizzes and flashcards to prepare for exams."
+},
+
+{
+number:"04",
+icon:"🎓",
+title:"Master your subjects",
+text:"Build confidence and improve your results."
+}
 
-    {
-      icon:"🎓",
-      title:"Master your subjects",
-      text:"Build confidence and improve every day."
-    }
+]
 
-  ]
 
+return(
+
+<section
+className="
+relative
+min-h-screen
+py-32
+px-6
+overflow-hidden
+bg-[#F6F2EB]
+"
+>
 
-  return (
 
-    <section className="
-      min-h-screen
-      bg-white
-      px-6
-      py-32
-    ">
+{/* Tunisian atmosphere */}
 
+<div
+className="
+absolute
+top-20
+left-[-150px]
+w-[350px]
+h-[350px]
+rounded-full
+bg-[#3F8FA8]/10
+blur-[120px]
+"
+/>
 
-      <div className="
-        max-w-5xl
-        mx-auto
-      ">
 
+<div
+className="
+absolute
+bottom-20
+right-[-150px]
+w-[350px]
+h-[350px]
+rounded-full
+bg-[#788B3D]/20
+blur-[120px]
+"
+/>
 
-        {/* Title */}
 
-        <motion.div
 
-          initial={{
-            opacity:0,
-            y:40
-          }}
 
-          whileInView={{
-            opacity:1,
-            y:0
-          }}
 
-          viewport={{
-            once:true
-          }}
+<div
+className="
+max-w-6xl
+mx-auto
+"
+>
 
-          className="
-            text-center
-            mb-20
-          "
 
-        >
 
-          <Logo showName={false}/>
+<motion.div
 
+initial={{
+opacity:0,
+y:40
+}}
 
-          <h2 className="
-            mt-6
-            text-5xl
-            font-semibold
-            tracking-tight
-          ">
+whileInView={{
+opacity:1,
+y:0
+}}
 
-            Your learning
-            <br/>
-            journey starts here.
+viewport={{
+once:true
+}}
 
-          </h2>
+transition={{
+duration:.8
+}}
 
+className="
+text-center
+"
+>
 
-          <p className="
-            mt-5
-            text-xl
-            text-gray-500
-          ">
 
-            From your first question
-            to complete understanding.
+<div
+className="
+text-5xl
+text-[#D97732]
+"
+>
+✦
+</div>
 
-          </p>
 
 
-        </motion.div>
+<h2
+className="
+mt-6
+text-5xl
+md:text-6xl
+font-semibold
+text-[#1E293B]
+leading-tight
+"
+>
 
+Your learning
+<br/>
 
+journey starts here.
 
-        {/* Steps */}
+</h2>
 
 
-        <div className="
-          space-y-10
-        ">
 
+<p
+className="
+mt-6
+text-xl
+text-gray-600
+"
+>
 
-          {steps.map((step,index)=>(
+From your first question
+to complete understanding.
 
+</p>
 
-            <motion.div
 
-              key={index}
 
-              initial={{
-                opacity:0,
-                x:-40
-              }}
+</motion.div>
 
-              whileInView={{
-                opacity:1,
-                x:0
-              }}
 
-              transition={{
-                delay:index*0.15
-              }}
 
-              viewport={{
-                once:true
-              }}
 
-              className="
-                flex
-                gap-6
-                items-center
-                bg-[#FCFAF7]
-                rounded-3xl
-                p-8
-                border
-                border-gray-100
-              "
 
-            >
 
 
-              <div className="
-                text-4xl
-              ">
-                {step.icon}
-              </div>
+{/* Journey */}
 
+<div
+className="
+relative
+mt-20
+"
+>
 
 
-              <div>
+{/* center line */}
 
-                <h3 className="
-                  text-2xl
-                  font-semibold
-                ">
-                  {step.title}
-                </h3>
+<div
+className="
+hidden
+md:block
+absolute
+left-1/2
+top-0
+bottom-0
+w-[3px]
+bg-[#D97732]/30
+"
+/>
 
 
-                <p className="
-                  text-gray-500
-                  mt-2
-                  text-lg
-                ">
-                  {step.text}
-                </p>
 
 
-              </div>
+<div
+className="
+space-y-12
+"
+>
 
 
-            </motion.div>
+{steps.map((step,index)=>(
 
 
-          ))}
+<motion.div
 
+key={step.number}
 
-        </div>
+initial={{
+opacity:0,
+x:index%2===0?-60:60
+}}
 
+whileInView={{
+opacity:1,
+x:0
+}}
 
-      </div>
+viewport={{
+once:true
+}}
 
+transition={{
+duration:.8
+}}
 
-    </section>
+className={`
+md:w-1/2
+relative
 
-  )
+${
+index%2===0
+?
+"md:pr-12"
+:
+"md:ml-auto md:pl-12"
+}
+
+`}
+
+>
+
+
+<div
+className="
+bg-white/80
+backdrop-blur-xl
+rounded-[32px]
+p-8
+border
+border-orange-100
+shadow-xl
+hover:scale-[1.03]
+transition
+"
+>
+
+
+
+<div
+className="
+flex
+items-center
+gap-4
+"
+>
+
+
+<div
+className="
+text-4xl
+"
+>
+{step.icon}
+</div>
+
+
+<div>
+
+<p
+className="
+text-[#D97732]
+font-semibold
+"
+>
+{step.number}
+</p>
+
+
+<h3
+className="
+text-2xl
+font-semibold
+text-[#1E293B]
+"
+>
+{step.title}
+</h3>
+
+
+</div>
+
+
+</div>
+
+
+
+
+<p
+className="
+mt-5
+text-gray-600
+text-lg
+"
+>
+{step.text}
+</p>
+
+
+
+
+</div>
+
+
+
+</motion.div>
+
+
+))}
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+</div>
+
+
+</section>
+
+
+)
+
 }
 
 

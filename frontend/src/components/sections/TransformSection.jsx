@@ -1,194 +1,316 @@
 import { motion } from "framer-motion"
 
 
-function TransformSection() {
+function TransformSection(){
 
-  return (
-    <section className="
-      min-h-screen
-      bg-[#FCFAF7]
-      flex
-      items-center
-      justify-center
-      px-6
-      py-32
-    ">
+return(
 
-      <div className="
-        max-w-6xl
-        w-full
-      ">
-
-
-        <motion.div
-
-          initial={{
-            opacity:0,
-            y:50
-          }}
-
-          whileInView={{
-            opacity:1,
-            y:0
-          }}
-
-          transition={{
-            duration:0.8
-          }}
-
-          viewport={{
-            once:true
-          }}
-
-          className="text-center"
-        >
-
-          <h2 className="
-            text-5xl
-            md:text-6xl
-            font-semibold
-            text-gray-900
-            tracking-tight
-          ">
-
-            From courses
-            <br />
-
-            to
-            <span className="text-orange-500">
-              {" "}knowledge
-            </span>
-
-          </h2>
+<section
+className="
+min-h-screen
+relative
+flex
+items-center
+justify-center
+px-6
+bg-[#F6F2EB]
+overflow-hidden
+"
+>
 
 
-          <p className="
-            mt-6
-            text-xl
-            text-gray-500
-            max-w-2xl
-            mx-auto
-          ">
-
-            Upload your course material and let
-            StudyMind transform it into a smarter
-            learning experience.
-
-          </p>
+<div
+className="
+max-w-5xl
+text-center
+"
+>
 
 
-        </motion.div>
+<motion.h2
+
+initial={{
+opacity:0,
+y:50
+}}
+
+whileInView={{
+opacity:1,
+y:0
+}}
+
+transition={{
+duration:1
+}}
+
+viewport={{
+once:true
+}}
+
+className="
+text-5xl
+md:text-7xl
+font-semibold
+leading-tight
+text-[#1E293B]
+"
+
+>
+
+Your courses
+<br/>
+
+become
+
+<span
+className="
+text-[#D97732]
+"
+>
+ knowledge.
+</span>
+
+
+</motion.h2>
 
 
 
-        <div className="
-          mt-20
-          grid
-          md:grid-cols-4
-          gap-6
-        ">
 
 
-          {[
-            {
-              icon:"📄",
-              title:"Your Courses",
-              text:"Upload PDFs and notes"
-            },
+<motion.p
 
-            {
-              icon:"🧠",
-              title:"AI Summary",
-              text:"Understand faster"
-            },
+initial={{
+opacity:0
+}}
 
-            {
-              icon:"🎯",
-              title:"Smart Quiz",
-              text:"Practice your knowledge"
-            },
+whileInView={{
+opacity:1
+}}
 
-            {
-              icon:"💬",
-              title:"AI Tutor",
-              text:"Ask anything"
-            }
+transition={{
+delay:.3,
+duration:1
+}}
 
-          ].map((item,index)=>(
+className="
+mt-8
+text-xl
+text-gray-600
+"
 
-            <motion.div
+>
 
-              key={index}
+Upload your lessons.
+Let StudyMind AI understand,
+summarize and explain them.
 
-              initial={{
-                opacity:0,
-                y:40
-              }}
-
-              whileInView={{
-                opacity:1,
-                y:0
-              }}
-
-              transition={{
-                delay:index*0.15,
-                duration:0.6
-              }}
-
-              viewport={{
-                once:true
-              }}
-
-              className="
-                bg-white/70
-                backdrop-blur-xl
-                rounded-3xl
-                p-8
-                border
-                border-gray-100
-                shadow-sm
-                hover:-translate-y-2
-                transition
-              "
-            >
-
-              <div className="
-                text-4xl
-                mb-5
-              ">
-                {item.icon}
-              </div>
+</motion.p>
 
 
-              <h3 className="
-                text-xl
-                font-semibold
-                text-gray-900
-              ">
-                {item.title}
-              </h3>
 
 
-              <p className="
-                mt-3
-                text-gray-500
-              ">
-                {item.text}
-              </p>
 
 
-            </motion.div>
+<div
+className="
+mt-20
+grid
+md:grid-cols-3
+gap-8
+items-center
+"
+>
 
-          ))}
 
 
-        </div>
+<motion.div
+
+whileHover={{
+scale:1.05
+}}
+
+className="
+rounded-3xl
+bg-white/70
+backdrop-blur
+shadow-xl
+p-8
+border
+border-orange-100
+"
+
+>
+
+<div className="
+text-4xl
+"
+>
+📄
+</div>
+
+<h3
+className="
+mt-4
+font-semibold
+text-xl
+"
+>
+Your Courses
+</h3>
 
 
-      </div>
+<p className="
+mt-2
+text-gray-500
+"
+>
+PDFs, notes, lessons
+</p>
 
-    </section>
-  )
+</motion.div>
+
+
+
+
+
+<div
+className="
+text-4xl
+text-[#D97732]
+"
+>
+→
+</div>
+
+
+
+
+
+<motion.div
+
+whileHover={{
+scale:1.05
+}}
+
+className="
+rounded-3xl
+bg-[#D97732]
+text-white
+shadow-xl
+p-8
+"
+
+>
+
+<div className="
+text-4xl
+"
+>
+✦
+</div>
+
+
+<h3
+className="
+mt-4
+font-semibold
+text-xl
+"
+>
+StudyMind AI
+</h3>
+
+
+<p
+className="
+mt-2
+text-orange-100
+"
+>
+Turns information into understanding
+</p>
+
+
+</motion.div>
+
+
+
+</div>
+
+
+
+
+
+<div
+className="
+mt-12
+flex
+justify-center
+gap-4
+flex-wrap
+"
+>
+
+
+<div className="
+px-5
+py-3
+rounded-full
+bg-white
+shadow
+"
+>
+🧠 Summary
+</div>
+
+
+<div className="
+px-5
+py-3
+rounded-full
+bg-white
+shadow
+"
+>
+📝 Quiz
+</div>
+
+
+<div className="
+px-5
+py-3
+rounded-full
+bg-white
+shadow
+"
+>
+🗂 Flashcards
+</div>
+
+
+<div className="
+px-5
+py-3
+rounded-full
+bg-white
+shadow
+"
+>
+💬 AI Tutor
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+)
+
 }
 
 

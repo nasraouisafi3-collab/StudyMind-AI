@@ -1,225 +1,302 @@
 import { motion } from "framer-motion"
-import Logo from "./Logo"
 
 
 function TounsiAI(){
 
-  return (
+return(
+
+<section
+className="
+relative
+min-h-screen
+py-32
+px-6
+bg-[#F6F2EB]
+overflow-hidden
+"
+>
+
+
+<div
+className="
+absolute
+top-20
+right-[-150px]
+w-[350px]
+h-[350px]
+rounded-full
+bg-[#3F8FA8]/20
+blur-[120px]
+"
+/>
 
-    <section className="
-      min-h-screen
-      bg-[#FCFAF7]
-      px-6
-      py-32
-      flex
-      items-center
-      justify-center
-    ">
 
+<div
+className="
+absolute
+bottom-20
+left-[-150px]
+w-[350px]
+h-[350px]
+rounded-full
+bg-[#788B3D]/20
+blur-[120px]
+"
+/>
+
+
+
+
+
+<div
+className="
+max-w-6xl
+mx-auto
+grid
+md:grid-cols-2
+gap-16
+items-center
+"
+>
+
+
+{/* TEXT */}
+
+<motion.div
+
+initial={{
+opacity:0,
+x:-40
+}}
+
+whileInView={{
+opacity:1,
+x:0
+}}
 
-      <div className="
-        max-w-6xl
-        w-full
-        text-center
-      ">
+viewport={{
+once:true
+}}
 
+>
 
-        <motion.div
 
-          initial={{
-            opacity:0,
-            y:50
-          }}
+<div
+className="
+text-5xl
+text-[#D97732]
+"
+>
+✦
+</div>
 
-          whileInView={{
-            opacity:1,
-            y:0
-          }}
 
-          viewport={{
-            once:true
-          }}
+<h2
+className="
+mt-6
+text-5xl
+md:text-6xl
+font-semibold
+text-[#1E293B]
+leading-tight
+"
+>
 
-        >
+AI that speaks
+<br/>
 
-          <Logo showName={false}/>
+your language.
 
+</h2>
 
-          <h2 className="
-            mt-8
-            text-5xl
-            md:text-6xl
-            font-semibold
-            tracking-tight
-          ">
 
-            Understand
-            <br/>
-            your way.
 
-          </h2>
+<p
+className="
+mt-6
+text-xl
+text-gray-600
+"
+>
 
+StudyMind understands students
+from Tunisia and explains difficult
+concepts naturally.
 
-          <p className="
-            mt-6
-            text-xl
-            text-gray-500
-          ">
+</p>
 
-            Learn in English,
-            Français,
-            or Tounsi 🇹🇳
 
-          </p>
 
+<div
+className="
+mt-8
+flex
+gap-3
+flex-wrap
+"
+>
 
-        </motion.div>
+<div className="
+px-5 py-3
+bg-white
+rounded-full
+shadow
+">
+🇬🇧 English
+</div>
 
 
+<div className="
+px-5 py-3
+bg-white
+rounded-full
+shadow
+">
+🇫🇷 Français
+</div>
 
-        {/* Transformation */}
 
+<div className="
+px-5 py-3
+bg-[#788B3D]/20
+rounded-full
+">
+🇹🇳 Tounsi
+</div>
 
-        <div className="
-          mt-20
-          grid
-          md:grid-cols-3
-          gap-8
-          items-center
-        ">
 
+</div>
 
-          {/* Original */}
 
-          <motion.div
+</motion.div>
 
-            whileInView={{
-              opacity:1
-            }}
 
-            initial={{
-              opacity:0
-            }}
 
-            className="
-              bg-white
-              rounded-3xl
-              p-8
-              shadow-lg
-            "
 
-          >
 
-            <h3 className="
-              font-semibold
-              text-xl
-              mb-4
-            ">
-              📄 Lesson
-            </h3>
 
 
-            <p className="
-              text-gray-500
-            ">
 
-              Supply and demand
-              determine market
-              equilibrium.
 
-            </p>
+{/* AI EXAMPLE */}
 
+<motion.div
 
-          </motion.div>
+initial={{
+opacity:0,
+scale:.9
+}}
 
+whileInView={{
+opacity:1,
+scale:1
+}}
 
+viewport={{
+once:true
+}}
 
-          {/* Spark */}
+className="
+bg-white/80
+backdrop-blur-xl
+rounded-[35px]
+p-8
+shadow-2xl
+border
+border-orange-100
+"
 
+>
 
-          <div className="
-            text-center
-          ">
 
-            <div className="
-              text-orange-500
-              text-6xl
-              animate-pulse
-            ">
-              ✦
-            </div>
+<h3
+className="
+text-xl
+font-semibold
+text-[#1E293B]
+"
+>
+Explain photosynthesis
+</h3>
 
 
-            <p className="
-              text-gray-500
-              mt-3
-            ">
-              AI transformation
-            </p>
 
+<div
+className="
+mt-6
+bg-orange-50
+rounded-2xl
+p-5
+"
+>
 
-          </div>
+<p className="
+font-semibold
+text-[#D97732]
+">
+AI Explanation
+</p>
 
 
+<p className="
+mt-3
+text-gray-700
+">
+Plants use sunlight, water and carbon dioxide
+to create energy.
+</p>
 
-          {/* Tounsi */}
 
+</div>
 
-          <motion.div
 
-            initial={{
-              opacity:0
-            }}
 
-            whileInView={{
-              opacity:1
-            }}
 
-            viewport={{
-              once:true
-            }}
 
-            className="
-              bg-[#1E88A8]
-              text-white
-              rounded-3xl
-              p-8
-            "
 
-          >
+<div
+className="
+mt-5
+bg-[#788B3D]/10
+rounded-2xl
+p-5
+"
+>
 
-            <h3 className="
-              font-semibold
-              text-xl
-              mb-4
-            ">
-              🇹🇳 Tounsi explanation
-            </h3>
+<p className="
+font-semibold
+text-[#788B3D]
+">
+🇹🇳 Tounsi Explanation
+</p>
 
 
-            <p>
+<p
+className="
+mt-3
+text-gray-700
+"
+>
+Ya3ni ennabta testa3mel dhaw echams
+bech ta3mel ghitha w tkabbar.
+</p>
 
-              Ya3ni essou9
-              ykoun stable ki
-              el offre w el demande
-              yetfahmou.
 
-            </p>
+</div>
 
 
-          </motion.div>
 
+</motion.div>
 
 
-        </div>
 
+</div>
 
-      </div>
 
+</section>
 
-    </section>
+)
 
-  )
 }
 
 

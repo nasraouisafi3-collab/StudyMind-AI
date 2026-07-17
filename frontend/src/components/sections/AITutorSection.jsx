@@ -1,331 +1,432 @@
 import { motion } from "framer-motion"
-import Logo from "../Logo"
-import TunisianPattern from "../TunisianPattern"
 
 
-function AITutorSection() {
+function AITutorSection(){
 
-  return (
+return(
+
+<section
+className="
+relative
+min-h-screen
+py-32
+px-6
+overflow-hidden
+bg-[#F6F2EB]
+"
+>
 
-    <section className="
-      relative
-      overflow-hidden
-      min-h-screen
-      bg-[#FCFAF7]
-      flex
-      items-center
-      justify-center
-      px-6
-      py-32
-    ">
 
-      {/* Tunisian detail */}
-      <TunisianPattern position="top-right"/>
+{/* Tunisian atmosphere */}
 
+<div
+className="
+absolute
+top-0
+right-[-150px]
+w-[350px]
+h-[350px]
+rounded-full
+bg-[#3F8FA8]/10
+blur-[120px]
+"
+/>
 
-      {/* Orange Mediterranean glow */}
-      <div className="
-        absolute
-        left-0
-        top-40
-        w-80
-        h-80
-        bg-orange-300
-        rounded-full
-        blur-3xl
-        opacity-20
-      "/>
 
+<div
+className="
+absolute
+bottom-0
+left-[-150px]
+w-[350px]
+h-[350px]
+rounded-full
+bg-[#788B3D]/20
+blur-[120px]
+"
+/>
 
 
-      <div className="
-        max-w-6xl
-        w-full
-        grid
-        md:grid-cols-2
-        gap-20
-        items-center
-      ">
 
 
-        {/* LEFT */}
 
-        <motion.div
+<div
+className="
+max-w-6xl
+mx-auto
+grid
+md:grid-cols-2
+gap-16
+items-center
+"
+>
+
+
+{/* LEFT */}
+
+<motion.div
+
+initial={{
+opacity:0,
+x:-40
+}}
+
+whileInView={{
+opacity:1,
+x:0
+}}
+
+viewport={{
+once:true
+}}
 
-          initial={{
-            opacity:0,
-            x:-60
-          }}
+transition={{
+duration:0.8
+}}
 
-          whileInView={{
-            opacity:1,
-            x:0
-          }}
+>
 
-          transition={{
-            duration:0.8
-          }}
 
-          viewport={{
-            once:true
-          }}
+<div
+className="
+text-[#D97732]
+text-5xl
+"
+>
+✦
+</div>
 
-        >
 
-          <Logo showName={false}/>
+<h2
+className="
+mt-6
+text-5xl
+md:text-6xl
+font-semibold
+text-[#1E293B]
+leading-tight
+"
+>
 
+One lesson.
+<br/>
 
-          <h2 className="
-            mt-8
-            text-5xl
-            md:text-6xl
-            font-semibold
-            tracking-tight
-            text-gray-900
-          ">
+Many ways
+<br/>
 
-            Your AI tutor
-            <br/>
-            for every subject.
+to understand.
 
-          </h2>
+</h2>
 
 
-          <p className="
-            mt-6
-            text-xl
-            text-gray-500
-            leading-relaxed
-          ">
+<p
+className="
+mt-6
+text-xl
+text-gray-600
+leading-relaxed
+"
+>
 
-            From economics to languages,
-            technology and science.
+StudyMind AI transforms every course
+into explanations that match the way
+you learn.
 
-            StudyMind adapts to the way
-            you understand.
+</p>
 
-          </p>
 
 
+<div
+className="
+mt-8
+flex
+gap-3
+flex-wrap
+"
+>
 
-          <div className="
-            flex
-            flex-wrap
-            gap-3
-            mt-8
-          ">
+<div className="
+px-5
+py-3
+rounded-full
+bg-white
+shadow
+">
+🇬🇧 English
+</div>
 
 
-            <span className="
-              px-4
-              py-2
-              rounded-full
-              bg-orange-100
-              text-orange-600
-              font-medium
-            ">
-              🇬🇧 English
-            </span>
+<div className="
+px-5
+py-3
+rounded-full
+bg-white
+shadow
+">
+🇫🇷 Français
+</div>
 
 
+<div className="
+px-5
+py-3
+rounded-full
+bg-[#788B3D]/20
+">
+🇹🇳 Tounsi
+</div>
 
-            <span className="
-              px-4
-              py-2
-              rounded-full
-              bg-blue-50
-              text-[#168AAD]
-              font-medium
-            ">
-              🇫🇷 Français
-            </span>
 
+</div>
 
 
-            <span className="
-              px-4
-              py-2
-              rounded-full
-              bg-orange-500
-              text-white
-              font-medium
-            ">
-              🇹🇳 Tounsi
-            </span>
+</motion.div>
 
 
-          </div>
 
 
-        </motion.div>
 
 
 
 
+{/* RIGHT PROCESS */}
 
-        {/* AI CARD */}
 
-        <motion.div
+<motion.div
 
-          initial={{
-            opacity:0,
-            y:60
-          }}
+initial={{
+opacity:0,
+scale:.9
+}}
 
-          whileInView={{
-            opacity:1,
-            y:0
-          }}
+whileInView={{
+opacity:1,
+scale:1
+}}
 
-          transition={{
-            duration:0.8
-          }}
+viewport={{
+once:true
+}}
 
-          viewport={{
-            once:true
-          }}
+transition={{
+duration:0.8
+}}
 
-          className="
-            bg-white
-            rounded-[32px]
-            p-8
-            shadow-xl
-            border
-            border-gray-100
-          "
+className="
+relative
+"
+>
 
-        >
 
+<div
+className="
+bg-white/80
+backdrop-blur-xl
+rounded-[35px]
+border
+border-orange-100
+shadow-2xl
+p-8
+"
+>
 
-          <div className="
-            flex
-            items-center
-            gap-3
-            mb-8
-          ">
 
-            <Logo showName={false}/>
+<div
+className="
+text-center
+font-semibold
+text-xl
+text-[#1E293B]
+"
+>
+✦ StudyMind AI Process
+</div>
 
-            <span className="
-              font-semibold
-            ">
-              StudyMind Tutor
-            </span>
 
-          </div>
 
 
 
+<div
+className="
+mt-8
+space-y-5
+"
+>
 
-          {/* Question */}
 
-          <div className="
-            bg-gray-100
-            rounded-2xl
-            p-5
-            mb-5
-          ">
+{/* STEP 1 */}
 
-            Explain inflation simply
+<div
+className="
+flex
+items-center
+gap-5
+p-5
+rounded-2xl
+bg-[#F6F2EB]
+"
+>
 
-          </div>
+<div className="
+text-3xl
+">
+📄
+</div>
 
+<div>
 
+<h3 className="font-semibold">
+Your Course
+</h3>
 
+<p className="text-gray-500 text-sm">
+PDFs, notes, lessons
+</p>
 
+</div>
 
-          {/* English answer */}
+</div>
 
-          <div className="
-            bg-orange-500
-            text-white
-            rounded-2xl
-            p-5
-            leading-relaxed
-            mb-5
-          ">
 
 
-            Inflation means prices increase
-            over time, so your money buys
-            fewer things.
 
+<div
+className="
+text-center
+text-[#D97732]
+text-3xl
+"
+>
+↓
+</div>
 
-            <br/><br/>
 
 
-            Example:
 
-            A sandwich that costs 5 DT
-            can become 6 DT later.
 
+{/* STEP 2 */}
 
-          </div>
+<div
+className="
+flex
+items-center
+gap-5
+p-5
+rounded-2xl
+bg-orange-50
+"
+>
 
+<div className="
+text-3xl
+">
+✦
+</div>
 
 
+<div>
 
+<h3 className="font-semibold">
+AI Understanding
+</h3>
 
-          {/* Tounsi request */}
 
-          <div className="
-            bg-[#FCFAF7]
-            border
-            border-orange-200
-            rounded-2xl
-            p-5
-            mb-5
-          ">
+<p className="text-gray-500 text-sm">
+Analyses and explains
+</p>
 
-            Fassrheli b Tounsi 🇹🇳
 
-          </div>
+</div>
 
+</div>
 
 
 
 
-          {/* Tounsi answer */}
+<div
+className="
+text-center
+text-[#D97732]
+text-3xl
+"
+>
+↓
+</div>
 
-          <div className="
-            bg-[#168AAD]
-            text-white
-            rounded-2xl
-            p-5
-            leading-relaxed
-          ">
 
 
-            Ya3ni el flous ma3adech
-            techri nafs el 7aja kif 9bal.
 
 
-            <br/><br/>
+{/* STEP 3 */}
 
+<div
+className="
+grid
+grid-cols-2
+gap-3
+"
+>
 
-            Mthalan sandwich kan b 5 DT
-            w ba3d walla b 6 DT.
 
+<div
+className="
+p-4
+rounded-2xl
+bg-[#788B3D]/10
+text-center
+"
+>
 
-            <br/><br/>
+🧠
 
+<p className="text-sm mt-2">
+Simple explanation
+</p>
 
-            Hedha howa inflation.
+</div>
 
 
-          </div>
 
+<div
+className="
+p-4
+rounded-2xl
+bg-[#3F8FA8]/10
+text-center
+"
+>
 
+🇹🇳
 
-        </motion.div>
+<p className="text-sm mt-2">
+Tounsi mode
+</p>
 
+</div>
 
-      </div>
 
 
-    </section>
+</div>
 
-  )
+
+
+</div>
+
+
+
+</div>
+
+
+</motion.div>
+
+
+
+</div>
+
+
+</section>
+
+)
 
 }
 

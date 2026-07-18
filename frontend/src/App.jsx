@@ -1,54 +1,64 @@
-import { Routes, Route } from "react-router-dom"
+import {Routes, Route, Navigate} from "react-router-dom";
 
-import Home from "./pages/Home"
-import Dashboard from "./pages/Dashboard"
-import Login from "./pages/Login"
-import Register from "./pages/Register"
-import ForgotPassword from "./pages/ForgotPassword"
+import Layout from "./components/Layout";
 
+import Dashboard from "./pages/Dashboard";
+import Chat from "./pages/Chat";
+import Upload from "./pages/Upload";
+import Library from "./pages/Library";
+import Quiz from "./pages/Quiz";
+import Flashcards from "./pages/Flashcards";
+import Progress from "./pages/Progress";
+import Profile from "./pages/Profile";
+import Settings from "./pages/Settings";
+import Document from "./pages/Document";
 
 
 function App(){
 
 return (
 
+<Layout>
+
 <Routes>
 
-<Route
-path="/"
-element={<Home />}
+<Route 
+path="/" 
+element={<Navigate to="/dashboard"/>}
 />
 
 
-<Route
-path="/login"
-element={<Login />}
-/>
+<Route path="/dashboard" element={<Dashboard/>}/>
 
+<Route path="/chat" element={<Chat/>}/>
 
-<Route
-path="/register"
-element={<Register />}
-/>
+<Route path="/upload" element={<Upload/>}/>
 
+<Route path="/library" element={<Library/>}/>
 
-<Route
-path="/forgot-password"
-element={<ForgotPassword />}
-/>
+<Route path="/quiz" element={<Quiz/>}/>
 
+<Route path="/flashcards" element={<Flashcards/>}/>
 
-<Route
-path="/dashboard"
-element={<Dashboard />}
+<Route path="/progress" element={<Progress/>}/>
+
+<Route path="/profile" element={<Profile/>}/>
+
+<Route path="/settings" element={<Settings/>}/>
+
+<Route 
+path="/document/:id" 
+element={<Document/>}
 />
 
 
 </Routes>
+
+</Layout>
 
 )
 
 }
 
 
-export default App
+export default App;

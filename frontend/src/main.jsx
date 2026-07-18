@@ -1,29 +1,33 @@
-import React from "react"
-import ReactDOM from "react-dom/client"
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-import App from "./App"
-import "./index.css"
+import {BrowserRouter} from "react-router-dom";
 
-import { BrowserRouter } from "react-router-dom"
-import { LanguageProvider } from "./context/LanguageContext"
+import App from "./App";
+
+import "./index.css";
+
+import {ThemeProvider} from "./context/ThemeContext";
+
 
 
 ReactDOM.createRoot(
-  document.getElementById("root")
-).render(
-
-  <React.StrictMode>
-
-    <BrowserRouter>
-
-      <LanguageProvider>
-
-        <App />
-
-      </LanguageProvider>
-
-    </BrowserRouter>
-
-  </React.StrictMode>
-
+document.getElementById("root")
 )
+.render(
+
+<React.StrictMode>
+
+<BrowserRouter>
+
+<ThemeProvider>
+
+<App/>
+
+</ThemeProvider>
+
+</BrowserRouter>
+
+</React.StrictMode>
+
+);

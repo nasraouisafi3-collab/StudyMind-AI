@@ -1,178 +1,170 @@
-import Sidebar from "@/components/dashboard/Sidebar"
-import LanguageSelector from "@/components/LanguageSelector"
+import { FileText, Brain, Layers, MessageSquare } from "lucide-react";
 
 
-function Dashboard(){
+const stats = [
+{
+title:"Documents studied",
+value:"18",
+icon:<FileText/>
+},
+
+{
+title:"Quizzes completed",
+value:"24",
+icon:<Brain/>
+},
+
+{
+title:"Flashcards mastered",
+value:"214",
+icon:<Layers/>
+},
+
+{
+title:"Study streak",
+value:"6 days",
+icon:<MessageSquare/>
+}
+
+];
+
+
+export default function Dashboard(){
 
 return (
 
-<div
-
-className="
-flex
-min-h-screen
-bg-[#F6F2EB]
-"
-
->
+<div className="dashboard">
 
 
-<Sidebar />
+<div className="welcome">
+
+<div>
+
+<h1>
+Welcome back, Safi 👋
+</h1>
+
+<p>
+Your AI tutor is ready. Continue learning where you stopped.
+</p>
+
+</div>
 
 
-<main
-
-className="
-flex-1
-p-8
-"
-
->
+<button className="primary-btn">
+✨ Ask AI Tutor
+</button>
 
 
-<div
+</div>
 
-className="
-flex
-justify-between
-items-center
-mb-10
-"
 
->
+
+<div className="stats-grid">
+
+
+{
+stats.map((item)=>(
+
+<div className="stat-card" key={item.title}>
+
+
+<div className="stat-icon">
+
+{item.icon}
+
+</div>
 
 
 <div>
 
-<h1
-
-className="
-text-4xl
-font-bold
-text-[#1E293B]
-"
-
->
-
-Welcome back 👋
-
-</h1>
-
-
-<p
-
-className="
-text-gray-500
-mt-2
-"
-
->
-
-Your AI learning assistant is ready.
-
-</p>
-
-
-</div>
-
-
-
-<LanguageSelector />
-
-
-</div>
-
-
-
-<div
-
-className="
-grid
-md:grid-cols-3
-gap-6
-"
-
->
-
-
-<div
-className="
-bg-white
-rounded-3xl
-p-6
-shadow
-"
->
-
-📚
-
-<h2 className="text-xl font-semibold mt-3">
-
-Upload Courses
-
+<h2>
+{item.value}
 </h2>
 
-<p className="text-gray-500 mt-2">
+<p>
+{item.title}
+</p>
 
-Add your lessons and let AI analyze them.
+</div>
 
+
+</div>
+
+))
+}
+
+
+</div>
+
+
+
+
+<div className="dashboard-grid">
+
+
+
+<div className="card">
+
+
+<div className="card-header">
+
+<h3>
+Recent documents
+</h3>
+
+
+<span>
+View all
+</span>
+
+</div>
+
+
+
+<div className="document">
+
+
+<div className="pdf">
+PDF
+</div>
+
+
+<div>
+
+<strong>
+Networking Fundamentals
+</strong>
+
+<p>
+Summary generated • 32 pages
 </p>
 
 
 </div>
 
 
-
-<div
-className="
-bg-white
-rounded-3xl
-p-6
-shadow
-"
->
-
-🤖
-
-<h2 className="text-xl font-semibold mt-3">
-
-AI Tutor
-
-</h2>
-
-<p className="text-gray-500 mt-2">
-
-Chat with your courses.
-
-</p>
-
-
 </div>
 
 
 
 
-<div
-className="
-bg-white
-rounded-3xl
-p-6
-shadow
-"
->
+<div className="document">
 
-📝
 
-<h2 className="text-xl font-semibold mt-3">
+<div className="pdf">
+PDF
+</div>
 
-Smart Tools
 
-</h2>
+<div>
 
-<p className="text-gray-500 mt-2">
+<strong>
+OSPF Routing Notes
+</strong>
 
-Generate quizzes and flashcards.
-
+<p>
+Quiz ready • 18 questions
 </p>
 
 
@@ -182,7 +174,66 @@ Generate quizzes and flashcards.
 </div>
 
 
-</main>
+
+</div>
+
+
+
+
+
+<div className="card">
+
+
+<h3>
+AI Quick Actions
+</h3>
+
+
+<button className="action">
+📄 Summarize document
+</button>
+
+
+<button className="action">
+📝 Generate quiz
+</button>
+
+
+<button className="action">
+🗂 Create flashcards
+</button>
+
+
+<button className="action">
+💬 Explain a topic
+</button>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+<div className="card recommendation">
+
+
+<h3>
+🤖 AI Recommendation
+</h3>
+
+
+<p>
+Your networking knowledge is strong. 
+Review VLAN and OSPF flashcards for 10 minutes today to improve mastery.
+</p>
+
+
+</div>
 
 
 </div>
@@ -190,6 +241,3 @@ Generate quizzes and flashcards.
 )
 
 }
-
-
-export default Dashboard

@@ -1,137 +1,102 @@
-import { Link } from "react-router-dom"
+import { motion } from "framer-motion"
 
 
-function Sidebar(){
 
-return (
+function StatsCard({title,value,icon}){
+
+
+return(
+
+<motion.div
+
+whileHover={{
+scale:1.05,
+y:-5
+}}
+
+transition={{
+duration:.3
+}}
+
+className="
+bg-white
+rounded-[32px]
+p-8
+shadow-lg
+border
+border-orange-100
+"
+
+>
+
+
+<div className="
+text-5xl
+mb-5
+">
+
+{icon}
+
+</div>
+
+
+
+<h3 className="
+text-gray-500
+text-lg
+">
+
+{title}
+
+</h3>
+
+
+
+<h2 className="
+text-5xl
+font-bold
+text-[#1E293B]
+mt-3
+">
+
+{value}
+
+</h2>
+
+
+
+<div className="
+mt-5
+h-2
+bg-gray-100
+rounded-full
+overflow-hidden
+">
 
 <div
 
 className="
-w-64
-min-h-screen
-bg-white
-shadow-xl
-p-6
+h-full
+bg-[#D97732]
+rounded-full
 "
 
->
+style={{
+width:"70%"
+}}
 
-
-<h1
-
-className="
-text-2xl
-font-bold
-text-[#D97732]
-mb-10
-"
-
->
-
-✦ StudyMind AI
-
-</h1>
-
-
-
-<nav
-
-className="
-space-y-4
-"
-
->
-
-
-<Link
-to="/dashboard"
-className="
-block
-p-3
-rounded-xl
-hover:bg-orange-50
-"
->
-
-🏠 Home
-
-</Link>
-
-
-
-<Link
-to="/dashboard"
-className="
-block
-p-3
-rounded-xl
-hover:bg-orange-50
-"
->
-
-📚 Courses
-
-</Link>
-
-
-
-<Link
-to="/dashboard"
-className="
-block
-p-3
-rounded-xl
-hover:bg-orange-50
-"
->
-
-🤖 AI Tutor
-
-</Link>
-
-
-
-<Link
-to="/dashboard"
-className="
-block
-p-3
-rounded-xl
-hover:bg-orange-50
-"
->
-
-📝 Quiz
-
-</Link>
-
-
-
-<Link
-to="/dashboard"
-className="
-block
-p-3
-rounded-xl
-hover:bg-orange-50
-"
->
-
-⚙ Settings
-
-</Link>
-
-
-
-</nav>
+/>
 
 
 </div>
+
+
+
+</motion.div>
 
 )
 
 }
 
 
-export default Sidebar
+export default StatsCard

@@ -1,61 +1,103 @@
-import { motion } from "framer-motion"
+import { NavLink } from "react-router-dom"
+
 
 
 function Sidebar(){
 
-const menu = [
-"⌂ Dashboard",
-"📚 Courses",
-"🧠 AI Tutor",
-"📝 Quiz",
-"🗂 Flashcards",
-"⚙ Settings"
+
+const links=[
+
+
+{
+name:"Dashboard",
+icon:"🏠",
+path:"/dashboard"
+},
+
+
+{
+name:"Courses",
+icon:"📚",
+path:"/courses"
+},
+
+
+{
+name:"AI Tutor",
+icon:"🤖",
+path:"/ai-tutor"
+},
+
+
+{
+name:"Quiz",
+icon:"📝",
+path:"/quiz"
+},
+
+
+{
+name:"Flashcards",
+icon:"🧠",
+path:"/flashcards"
+},
+
+
+{
+name:"Progress",
+icon:"📈",
+path:"/progress"
+},
+
+
+{
+name:"Profile",
+icon:"👤",
+path:"/profile"
+},
+
+
+{
+name:"Settings",
+icon:"⚙️",
+path:"/settings"
+}
+
+
 ]
+
 
 
 return(
 
-<motion.aside
 
-initial={{
-x:-40,
-opacity:0
-}}
-
-animate={{
-x:0,
-opacity:1
-}}
+<div
 
 className="
 w-72
 min-h-screen
+bg-white
+shadow-xl
 p-6
-bg-white/70
-backdrop-blur-xl
-border-r
-border-orange-100
 "
 
 >
 
 
-<div
+<h1
+
 className="
 text-2xl
-font-semibold
-text-[#1E293B]
+font-bold
+text-[#D97732]
 mb-10
 "
+
 >
 
-<span className="text-[#C96A2E]">
-✦
-</span>
+✦ StudyMind AI
 
- StudyMindAI
-
-</div>
+</h1>
 
 
 
@@ -63,48 +105,84 @@ mb-10
 space-y-3
 ">
 
+
 {
-menu.map((item,index)=>(
 
-<motion.div
+links.map((link)=>(
 
-whileHover={{
-x:8
-}}
 
-key={index}
+<NavLink
 
-className={`
-px-5
-py-3
-rounded-2xl
-cursor-pointer
-font-medium
-transition
+key={link.path}
 
-${index===0
+to={link.path}
+
+className={({isActive}) =>
+
+`
+
+flex
+items-center
+gap-4
+p-4
+rounded-xl
+transition-all
+duration-300
+
+${
+
+isActive
+
 ?
-"bg-[#C96A2E] text-white"
+
+"bg-orange-100 text-orange-700 font-semibold scale-105"
+
 :
-"text-gray-600 hover:bg-orange-50"
+
+"hover:bg-orange-50 text-gray-700"
+
 }
 
-`}
+`
+
+}
+
 
 >
 
-{item}
 
-</motion.div>
+<span className="
+text-xl
+">
+
+{link.icon}
+
+</span>
+
+
+
+<span>
+
+{link.name}
+
+</span>
+
+
+
+</NavLink>
+
 
 ))
+
+
 }
 
 
 </div>
 
 
-</motion.aside>
+</div>
+
 
 )
 
